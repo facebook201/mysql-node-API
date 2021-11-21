@@ -1,0 +1,17 @@
+
+
+@hostname = http://localhost:8088
+@contentType = application/json
+
+### 注册用户
+POST {{hostname}}/users/register
+Content-Type: {{contentType}}
+
+{
+    "user_name": "张三",
+    "password": "1301895765"
+}
+
+
+### login 
+POST {{hostname}}/users/register
