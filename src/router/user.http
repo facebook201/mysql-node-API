@@ -4,14 +4,14 @@
 @contentType = application/json
 
 ### 注册用户
-POST {{hostname}}/users/register
+POST {{hostname}}/user/register
 Content-Type: {{contentType}}
 
 {
-    "user_name": "张三",
+    "user_name": "王五",
     "password": "1301895765"
 }
 
 
 ### login 
-POST {{hostname}}/users/register
+GET {{hostname}}/user

@@ -21,7 +21,4 @@ seq.authenticate().then(res => {
     console.log('连接失败', err);
 });
 
-
 module.exports = seq;
-
-

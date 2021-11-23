@@ -4,4 +4,4 @@ const app = require('./app');
 
 app.listen(APP_PORT, () => {
     console.log('API');
-})
+});
