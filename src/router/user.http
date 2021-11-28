@@ -8,8 +8,8 @@ POST {{hostname}}/user/register
 Content-Type: {{contentType}}
 
 {
-    "user_name": "王五",
-    "password": "1301895765"
+    "user_name": "张1去是是是",
+    "password": "130190534"
 }
 
 

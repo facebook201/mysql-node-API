@@ -1,4 +1,3 @@
-(async () => {
     const { DataTypes } = require('sequelize');
     const seq = require('../db/seq'); 
     
@@ -22,8 +21,6 @@
             comment: '是否是管理员 0：不是管理员',
         }
     });
-    // await User.sync({ force: true });
     module.exports = User;
-})();
 
 

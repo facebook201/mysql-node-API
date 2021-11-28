@@ -17,9 +17,16 @@ class UserController {
             return;
         }
         // 如果用户存在
-        const ress = await getUserInfo({ user_name });
-        console.log(ress);
-        return;
+        const userInfo = await getUserInfo({ user_name });
+        if (userInfo) {
+            ctx.status = 409;
+            ctx.body = {
+                code: '10409',
+                message: `${userInfo.user_name}已经存在!`,
+                result: '',
+            };
+            return;
+        }
 
         // 操作数据库
         const res = await createUser(user_name, password);
