@@ -4,7 +4,8 @@
   "author": "shiyao",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/main.js"
+    "start": "nodemon ./src/main.js",
+    "debug": "node --inspect ./src/main.js"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
@@ -21,6 +22,8 @@
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa-views": "^8.0.0",
     "log4js": "^6.3.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.9.0",

@@ -3,6 +3,10 @@
 @hostname = http://localhost:8088
 @contentType = application/json
 
+### 访问user
+get {{hostname}}/user
+
+
 ### 注册用户
 POST {{hostname}}/user/register
 Content-Type: {{contentType}}
@@ -14,4 +18,10 @@ Content-Type: {{contentType}}
 
 
 ### login 
-GET {{hostname}}/user
+post {{hostname}}/user/login
+Content-Type: {{contentType}}
+
+{
+    "user_name": "张三",
+    "password": "1301895765"
+}

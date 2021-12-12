@@ -1,0 +1,14 @@
+
+@hostname = http://localhost:8088
+@contentType = application/json
+
+
+
+### 上传商品
+
+post {{hostname}}/goods/upload
+
+{
+    "name": "洗发水",
+    "price": 23.98
+}

@@ -13,13 +13,16 @@ class UserService {
         return res.dataValues;
     }
     // 查询数据 是否存在该用户
-    async getUserInfo({ user_name }) {
-        const whereOpt = {
-            user_name: '',
-        };
+    async getUserInfo({ id, user_name, password, is_admin }) {
+        const whereOpt = {};
+
+        id && Object.assign(whereOpt, { id });
+        user_name && Object.assign(whereOpt, { user_name })
+        password && Object.assign(whereOpt, { password })
+        is_admin && Object.assign(whereOpt, { is_admin })
         // 查询数据
         const res = await User.findOne({
-            attributes: ['user_name'],
+            attributes: ['id', 'user_name', 'password', 'is_admin'],
             where: whereOpt
         });
 

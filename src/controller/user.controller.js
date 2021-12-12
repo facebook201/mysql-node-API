@@ -1,6 +1,7 @@
-
+const jwt = require('jsonwebtoken');
 const { createUser, getUserInfo } = require('../service/user.service');
 
+const { JWT_SECRET } = require('../config/config.default');
 class UserController {
     async register(ctx, next) {
         const { user_name, password } = ctx.request.body;
@@ -41,7 +42,21 @@ class UserController {
     }
     // 登陆
     async login(ctx) {
-        ctx.body = '登陆成功！';
+        const { user_name } = ctx.request.body;
+        try {
+            // 从返回结果中剔除 password 属性，将剩下的属性放到 res 对象中
+            const { password, ...resUser } = await getUserInfo({ user_name });
+            ctx.body = {
+                code: 0,
+                message: '用户登录成功！',
+                result: {
+                    // 登录返回一个 token
+                    token: jwt.sign(resUser, JWT_SECRET, { expiresIn: '1d' }),
+                }
+            };
+        } catch(err) {
+            console.log(err)
+        }
     }
 }
 
