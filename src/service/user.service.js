@@ -2,13 +2,14 @@
 const User = require('../model/user.model');
 
 class UserService {
-    async createUser(user_name, password) {
+    async createUser(user_name, password, is_admin) {
         const rand = Math.floor(Math.random() * 100);
-        // todo 传入username和password 写入数据库
+        // todo 传入 username 和 password 写入数据库
         // * create 方法会创建并保存
         const res = await User.create({
             user_name,
             password: `${password}${rand}`,
+            is_admin,
         });
         return res.dataValues;
     }

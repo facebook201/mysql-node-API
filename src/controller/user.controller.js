@@ -4,7 +4,7 @@ const { createUser, getUserInfo } = require('../service/user.service');
 const { JWT_SECRET } = require('../config/config.default');
 class UserController {
     async register(ctx, next) {
-        const { user_name, password } = ctx.request.body;
+        const { user_name, password, is_admin } = ctx.request.body;
         // 用户名或者密码
         if (!user_name || !password) {
             // 记录信息 收集错误信息 放在 log4 日志
@@ -30,7 +30,7 @@ class UserController {
         }
 
         // 操作数据库
-        const res = await createUser(user_name, password);
+        const res = await createUser(user_name, password, is_admin);
         ctx.body = {
             code: 0,
             message: '用户注册成功',

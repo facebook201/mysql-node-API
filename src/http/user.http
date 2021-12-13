@@ -12,8 +12,9 @@ POST {{hostname}}/user/register
 Content-Type: {{contentType}}
 
 {
-    "user_name": "张1去是是是",
-    "password": "130190534"
+    "user_name": "admin",
+    "password": "13019009334",
+    "is_admin": 1
 }
 
 
@@ -22,6 +23,6 @@ post {{hostname}}/user/login
 Content-Type: {{contentType}}
 
 {
-    "user_name": "张三",
-    "password": "1301895765"
+    "user_name": "admin",
+    "password": "13019009334"
 }

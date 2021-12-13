@@ -7,6 +7,7 @@
 ### 上传商品
 
 post {{hostname}}/goods/upload
+authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTgsInVzZXJfbmFtZSI6ImFkbWluIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTYzOTM5Njc4NCwiZXhwIjoxNjM5NDgzMTg0fQ.ZRVCpSmzaDliCkUn96MSjfOictVr8h-W-pGIe6kHsNE
 
 {
     "name": "洗发水",
